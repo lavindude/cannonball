@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GameObject ball;
-    private int speed = 50;
+    public int speed = 100;
+    public Vector3 startPos = new Vector3(-5.49f, -0.35f, 0.89f);
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +27,8 @@ public class PlayerController : MonoBehaviour
             GameObject ballPrefab = Instantiate(ball, transform.position, transform.rotation);
             Rigidbody ballPrefabRb = ballPrefab.GetComponent<Rigidbody>();
             Vector3 mousePos = Input.mousePosition;
-            ballPrefabRb.AddForce((mousePos - transform.position).normalized * speed);
-            //Debug.Log(mousePos.x);
+            ballPrefabRb.AddForce((mousePos - startPos).normalized * speed);
+            Debug.Log(mousePos.x + " " + mousePos.y);
         }
     }
 }

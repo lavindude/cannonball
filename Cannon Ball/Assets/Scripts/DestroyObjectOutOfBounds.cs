@@ -13,7 +13,8 @@ public class DestroyObjectOutOfBounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < -1.25)
+        if (transform.position.y < -1.25 || transform.position.x > 5.7 ||
+            transform.position.y > 10.7 || transform.position.x < -7.7)
         {
             Destroy(gameObject);
         }
