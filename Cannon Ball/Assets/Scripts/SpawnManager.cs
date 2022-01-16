@@ -19,8 +19,6 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-    
-
     void SpawnCubeRandomly()
     {
         Vector3 spawnPos = new Vector3(Random.Range(-spawnRange, spawnRange), 10.5f, 1);

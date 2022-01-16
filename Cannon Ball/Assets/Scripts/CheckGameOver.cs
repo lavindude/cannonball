@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionEvent : MonoBehaviour
+public class CheckGameOver : MonoBehaviour
 {
     private GameManager gameManager;
     // Start is called before the first frame update
@@ -15,16 +15,9 @@ public class CollisionEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Cube")
+        if (transform.position.y < -0.7)
         {
-            Destroy(gameObject);
-            Destroy(other.gameObject);
-            gameManager.updateScore();
+            gameManager.gameOver();
         }
     }
 }
