@@ -25,7 +25,9 @@ public class PlayerController : MonoBehaviour
 
     void SpawnBall()
     {
-        if (Input.GetMouseButtonDown(0))
+        GameObject[] curGameObjects = GameObject.FindGameObjectsWithTag("Sphere");
+
+        if (Input.GetMouseButtonDown(0) && curGameObjects.Length == 0)
         {
             GameObject ballPrefab = Instantiate(ball, transform.position, transform.rotation);
             Rigidbody ballPrefabRb = ballPrefab.GetComponent<Rigidbody>();
